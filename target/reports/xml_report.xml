@@ -1,91 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="0.265" tests="10" skipped="0" failures="10" errors="0">
-<testcase classname="login screen" name="login with correct credentials - Example #1.1" time="0.027">
-<failure/>
+<testsuite name="Cucumber" time="15.163" tests="7" skipped="0" failures="1" errors="0">
+<testcase classname="login screen" name="login with incorrect credentials - Example #1.1" time="2.645">
 <system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "standard_user" and "secret_sauce"..........................skipped
-And click on the "Login" button.............................................skipped
-Then user is redirected to the products page................................skipped
+Given user is on the login page.............................................passed
+When user enter "wrong_password1234" and "standard_user"....................passed
+And click on the "Login" button.............................................passed
+Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.passed
 ]]></system-out>
 </testcase>
-<testcase classname="login screen" name="login with correct credentials - Example #1.2" time="0.008">
-<failure/>
+<testcase classname="login screen" name="login with incorrect credentials - Example #1.2" time="2.101">
 <system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "locked_out_user" and "secret_sauce"........................skipped
-And click on the "Login" button.............................................skipped
-Then user is redirected to the products page................................skipped
+Given user is on the login page.............................................passed
+When user enter "select * from users" and "standard_user"...................passed
+And click on the "Login" button.............................................passed
+Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.passed
 ]]></system-out>
 </testcase>
-<testcase classname="login screen" name="login with correct credentials - Example #1.3" time="0.002">
-<failure/>
+<testcase classname="login screen" name="login with incorrect credentials - Example #1.3" time="2.086">
 <system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "performance_glitch_user" and "secret_sauce"................skipped
-And click on the "Login" button.............................................skipped
-Then user is redirected to the products page................................skipped
+Given user is on the login page.............................................passed
+When user enter "" and "locked_out_user"....................................passed
+And click on the "Login" button.............................................passed
+Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.passed
 ]]></system-out>
 </testcase>
-<testcase classname="login screen" name="login with incorrect credentials - Example #1.1" time="0.007">
-<failure/>
+<testcase classname="login screen" name="login with incorrect credentials - Example #1.4" time="2.116">
 <system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "wrong_password1234" and "standard_user"....................skipped
-And click on the "Login" button.............................................skipped
-Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.skipped
+Given user is on the login page.............................................passed
+When user enter "secret_sauce" and "problem_user"...........................passed
+And click on the "Login" button.............................................passed
+Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.passed
 ]]></system-out>
 </testcase>
-<testcase classname="login screen" name="login with incorrect credentials - Example #1.2" time="0.006">
-<failure/>
+<testcase classname="login screen" name="login with incorrect credentials - Example #1.5" time="2.025">
 <system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "select * from users" and "standard_user"...................skipped
-And click on the "Login" button.............................................skipped
-Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.skipped
+Given user is on the login page.............................................passed
+When user enter "1234567890" and "problem_user".............................passed
+And click on the "Login" button.............................................passed
+Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.passed
 ]]></system-out>
 </testcase>
-<testcase classname="login screen" name="login with incorrect credentials - Example #1.3" time="0.01">
-<failure/>
+<testcase classname="login screen" name="login with incorrect credentials - Example #1.6" time="2.083">
 <system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "" and "locked_out_user"....................................skipped
-And click on the "Login" button.............................................skipped
-Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.skipped
+Given user is on the login page.............................................passed
+When user enter "1234567890" and "select * from users"......................passed
+And click on the "Login" button.............................................passed
+Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.passed
 ]]></system-out>
 </testcase>
-<testcase classname="login screen" name="login with incorrect credentials - Example #1.4" time="0.003">
+<testcase classname="login screen" name="login with incorrect credentials - Example #1.7" time="1.954">
 <failure/>
 <system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "secret_sauce" and "problem_user"...........................skipped
-And click on the "Login" button.............................................skipped
-Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.skipped
-]]></system-out>
-</testcase>
-<testcase classname="login screen" name="login with incorrect credentials - Example #1.5" time="0.003">
-<failure/>
-<system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "1234567890" and "problem_user".............................skipped
-And click on the "Login" button.............................................skipped
-Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.skipped
-]]></system-out>
-</testcase>
-<testcase classname="login screen" name="login with incorrect credentials - Example #1.6" time="0.005">
-<failure/>
-<system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "1234567890" and "select * from users"......................skipped
-And click on the "Login" button.............................................skipped
-Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.skipped
-]]></system-out>
-</testcase>
-<testcase classname="login screen" name="login with incorrect credentials - Example #1.7" time="0.002">
-<failure/>
-<system-out><![CDATA[
-Given user is on the login page.............................................undefined
-When user enter "!@#$%^&*\)(_+\}{:"  <>?"" and "performance_glitch_user"....skipped
+Given user is on the login page.............................................passed
+When user enter "!@#$%^&*\)(_+\}{:"  <>?"" and "performance_glitch_user"....undefined
 And click on the "Login" button.............................................skipped
 Then error message "Epic sadface: Username and password do not match any user in this service" is displayed.skipped
 ]]></system-out>

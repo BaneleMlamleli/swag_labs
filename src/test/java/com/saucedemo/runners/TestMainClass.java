@@ -11,8 +11,8 @@ import io.cucumber.junit.CucumberOptions;
         // TODO: Add "com.saucedemo.utility"  in the glue for screenshot capturing
         glue = { "com.saucedemo.stepdef"}, 
         monochrome = true, 
-        plugin = { "pretty", "html:target/reports/html_report.html", "json:target/reports/json_report.json", "junit:target/reports/xml_report.xml" }, 
-        tags = "@login"
+        plugin = { "pretty", "html:target/reports/html_report.html", "json:target/reports/json_report.json", "junit:target/reports/xml_report.xml" },
+        tags = "@correct_credentials"
 )
 public class TestMainClass{
     
