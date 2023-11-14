@@ -1,13 +1,19 @@
-package com.saucedemo.stepdef;
+package com.swag_labs.stepdef;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import com.saucedemo.core.BaseClass;
+
+import com.swag_labs.core.BaseClass;
+
 import io.cucumber.java.en.*;
 
 public class Login extends BaseClass {
 
     final String BROWSER = "chrome"; //chrome, firefox, edge
+
+    // public Login(){
+    //     BaseClass.launchBrowserWithWebsiteHomePage(BROWSER);
+    // }
     
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
@@ -30,7 +36,6 @@ public class Login extends BaseClass {
         System.out.println("product page");
     }
 
-    // \"(.*?)\"
     @Then("^error message \"([^\"]*)\" is displayed$")
     public void error_message_is_displayed(String errorMessage){
         System.out.println("error messsage");

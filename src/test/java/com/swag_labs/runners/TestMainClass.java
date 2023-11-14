@@ -1,4 +1,4 @@
-package com.saucedemo.runners;
+package com.swaglabs.runners;
 
 import org.junit.runner.RunWith;
 

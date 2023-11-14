@@ -1,4 +1,4 @@
-package com.saucedemo.core;
+package com.swag_labs.core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
