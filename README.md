@@ -2,13 +2,15 @@
 
 Test automating e-commerce website, [swag labs](https://www.saucedemo.com/v1/).
 
-Implemented tools/technologies:
+Technologies that will be implemented:
 
 - Java
+- Maven
 - Selenium WebDriver
 - Cucumber BDD
+- Page object model
+- Git
 - Log4J
 - Jenkins
 - Jira reporting
-- Page object model
 - Test screen capture

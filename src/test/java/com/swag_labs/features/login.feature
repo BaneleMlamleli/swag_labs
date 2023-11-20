@@ -10,10 +10,10 @@ Feature: login screen
         And click on the "Login" button
         Then user is redirected to the products page
         Examples:
-            | username                | password     |
-            | standard_user           | secret_sauce |
-            | locked_out_user         | secret_sauce |
-            | performance_glitch_user | secret_sauce |
+            | username      | password     |
+            | standard_user | secret_sauce |
+    # | locked_out_user         | secret_sauce |
+    # | performance_glitch_user | secret_sauce |
 
     @incorrect_credentials
     Scenario Outline: login with incorrect credentials

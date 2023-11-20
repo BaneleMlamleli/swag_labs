@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * Class: BaseClass
@@ -16,9 +17,10 @@ public class BaseClass {
     public static WebDriver webDriver = null;
     static final String DRIVER_PATH = "C:/Users/ciphe/Documents/Programming_local/webdrivers/";
     static final String BASE_URL = "https://www.saucedemo.com/";
+    final static String BROWSER = "firefox"; //chrome, firefox, edge
     
-    public static void launchBrowserWithWebsiteHomePage(String browser) {
-        switch (browser) {
+    public static void launchBrowserWithWebsiteHomePage() {
+        switch (BROWSER) {
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", DRIVER_PATH+"chromedriver.exe");
                 webDriver = new ChromeDriver();
@@ -26,9 +28,9 @@ public class BaseClass {
                 webDriver.navigate().to(BASE_URL);
                 break;
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", DRIVER_PATH+"geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", DRIVER_PATH + "geckodriver.exe");
                 FirefoxOptions options = new FirefoxOptions();
-                options.setBinary("c:/browser_webdrivers/firefox.exe");
+                options.setBinary("C:/Program Files/Mozilla Firefox/firefox.exe");
                 webDriver = new FirefoxDriver(options);
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(BASE_URL);
