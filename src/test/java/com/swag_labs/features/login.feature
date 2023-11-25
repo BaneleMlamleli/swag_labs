@@ -26,6 +26,8 @@ Feature: login screen
             | standard_user           | wrong_password1234       |
             | standard_user           | select * from users      |
             | locked_out_user         |                          |
+            |                         | secret_sauce             |
+            |                         |                          |
             | problem_user            | secret_sauce             |
             | problem_user            | 1234567890               |
             | select * from users     | 1234567890               |
