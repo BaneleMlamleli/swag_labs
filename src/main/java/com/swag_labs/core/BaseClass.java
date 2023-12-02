@@ -17,7 +17,7 @@ public class BaseClass {
     public static WebDriver webDriver = null;
     static final String DRIVER_PATH = "C:/Users/ciphe/Documents/Programming_local/webdrivers/";
     static final String BASE_URL = "https://www.saucedemo.com/";
-    final static String BROWSER = "firefox"; //chrome, firefox, edge
+    final static String BROWSER = "chrome"; //chrome, firefox, edge
     
     public static void launchBrowserWithWebsiteHomePage() {
         switch (BROWSER) {

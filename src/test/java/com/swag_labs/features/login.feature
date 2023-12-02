@@ -6,14 +6,14 @@ Feature: login screen
     @correct_credentials
     Scenario Outline: login with correct credentials
         Given user is on the login page
-        When user enter "<username>" and "<password>"
+        When user enter username "standard_user" and password "secret_sauce"
         And click on the "Login" button
         Then user is redirected to the products page
-        Examples:
-            | username      | password     |
-            | standard_user | secret_sauce |
-    # | locked_out_user         | secret_sauce |
-    # | performance_glitch_user | secret_sauce |
+    # Examples:
+    #     | username                | password     |
+    #     | standard_user           | secret_sauce |
+    #     | locked_out_user         | secret_sauce |
+    #     | performance_glitch_user | secret_sauce |
 
     @incorrect_credentials
     Scenario Outline: login with incorrect credentials

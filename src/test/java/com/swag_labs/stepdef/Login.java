@@ -12,7 +12,7 @@ public class Login{
         BaseClass.launchBrowserWithWebsiteHomePage();
     }
     
-    @When("^user enter \"([^\"]*)\" and \"([^\"]*)\"$")
+    @When("^user enter username \"([^\"]*)\" and password \"([^\"]*)\"$")
     public void user_enter_username_and_password(String username, String password) {
         login.enterCredentials(username, password);
     }

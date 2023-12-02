@@ -8,13 +8,6 @@ Feature: Burger menu navigation on the website
         When user enter username "standard_user" and password "secret_sauce"
         And click on the "Login" button
         Then user is redirected to the products page
-    # Given user is on the login page
-    # When user enter "<username>" and "<password>"
-    # And click on the "Login" button
-    # Then user is redirected to the products page
-    # Examples:
-    #     | username      | password     |
-    #     | standard_user | secret_sauce |
 
     Scenario: Test 'All Items' and 'Reset App State' in the burger menu options
         Given user clicks on the "burger menu"
