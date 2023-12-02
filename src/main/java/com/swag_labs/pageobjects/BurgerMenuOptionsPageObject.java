@@ -1,6 +1,14 @@
 package com.swag_labs.pageobjects;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.swag_labs.core.BaseClass;
 
 public class BurgerMenuOptionsPageObject extends BaseClass {
@@ -17,20 +25,20 @@ public class BurgerMenuOptionsPageObject extends BaseClass {
     public void clickOnElement(String clickedElement) {
         switch (clickedElement) {
             case "All Items":
-                webDriver.findElement(allItems).click();
+                waitForElementUntilVisible(allItems);
                 break;
             case "Reset App State":
-                // TODO: I need to write a code that click on all of the 'Remove' button/s if they are available in order to reset the app state 
-                webDriver.findElement(resetAppState).click();
+                webDriver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']")).click();
+                waitForElementUntilVisible(resetAppState);
                 break;
             case "About":
-                webDriver.findElement(about).click();
+                waitForElementUntilVisible(about);
                 break;
             case "Logout":
-                webDriver.findElement(logout).click();
+                waitForElementUntilVisible(logout);
                 break;
             case "burger menu":
-                webDriver.findElement(burgerMenu).click();
+                waitForElementUntilVisible(burgerMenu);
                 break;
             default:
                 break;
@@ -49,9 +57,13 @@ public class BurgerMenuOptionsPageObject extends BaseClass {
     }
 
     public void removeItemsFromCart() {
-        if (webDriver.findElement(itemsInCart).isDisplayed()) {
-            System.out.println("'Reset App State' failed");
-        } else {
+        try {
+            if (webDriver.findElement(itemsInCart).isDisplayed()) {
+                System.out.println("'Reset App State' failed");
+            } else {
+                System.out.println("'Reset App State' passed");
+            }
+        } catch (NoSuchElementException e) {
             System.out.println("'Reset App State' passed");
         }
     }
@@ -71,6 +83,9 @@ public class BurgerMenuOptionsPageObject extends BaseClass {
             System.out.println("failed to logout");
         }
     }
-    
 
+    public void waitForElementUntilVisible(By element) {
+        WebDriverWait webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(element)).click();
+    }
 }

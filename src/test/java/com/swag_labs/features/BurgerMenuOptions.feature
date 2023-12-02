@@ -16,9 +16,12 @@ Feature: Burger menu navigation on the website
         And user click on "All Items"
         Then user is redirected to the home page
 
-    Scenario: Test 'About' and 'Logout' in the burger menu options
+    Scenario: Test 'About' in the burger menu options
         Given user clicks on the "burger menu"
         When user click on "About"
-        And user is redirected to "saucelabs" home page with title "Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing"
-        And user clicks on "Logout"
+        Then user is redirected to "saucelabs" home page with title "Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing"
+
+    Scenario: Test 'Logout' in the burger menu options
+        Given user clicks on the "burger menu"
+        When user clicks on "Logout"
         Then login page is displayed

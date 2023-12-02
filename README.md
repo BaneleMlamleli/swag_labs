@@ -1,6 +1,6 @@
 # swag_labs
 
-Test automating e-commerce website, [swag labs](https://www.saucedemo.com/v1/).
+Automating an e-commerce website, [swag labs](https://www.saucedemo.com/v1/).
 
 Technologies that will be implemented:
 

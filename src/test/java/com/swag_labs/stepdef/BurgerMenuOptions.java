@@ -7,9 +7,9 @@ public class BurgerMenuOptions {
 
     BurgerMenuOptionsPageObject burgerMenuOptionsPageObject = new BurgerMenuOptionsPageObject();
 
-    @Given("user clicks on the {string}")
-    @And("user click on {string}")
+    @Given("^user clicks on the \"([^\"]*)\"$")
     @When("^user clicks on \"([^\"]*)\"$")
+    @And("^user click on \"([^\"]*)\"$")
     public void user_clicks_on_the_burgerMenu(String clickedElement) {
         burgerMenuOptionsPageObject.clickOnElement(clickedElement);
     }
@@ -24,7 +24,7 @@ public class BurgerMenuOptions {
         burgerMenuOptionsPageObject.removeItemsFromCart();
     }
 
-    @And("^user is redirected to \"([^\"]*)\" home page with title \"([^\"]*)\"$")
+    @Then("^user is redirected to \"([^\"]*)\" home page with title \"([^\"]*)\"$")
     public void user_is_redirected_to_sauce_labs_home_page(String saucelabs, String title) {
         burgerMenuOptionsPageObject.sauceLabsHomePage(saucelabs, title);
     }
