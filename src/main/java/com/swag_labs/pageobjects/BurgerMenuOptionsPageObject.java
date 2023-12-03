@@ -1,13 +1,15 @@
 package com.swag_labs.pageobjects;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.swag_labs.core.BaseClass;
 
@@ -21,6 +23,7 @@ public class BurgerMenuOptionsPageObject extends BaseClass {
     By cart = By.xpath("//a[@class='shopping_cart_link']");
     By itemsInCart = By.xpath("//span[@class='shopping_cart_badge']");
     By productPage = By.xpath("//span[@class='title']");
+    By btnRemoveItemFromCart = By.xpath("//button[text()='Remove']");
 
     public void clickOnElement(String clickedElement) {
         switch (clickedElement) {
@@ -58,12 +61,15 @@ public class BurgerMenuOptionsPageObject extends BaseClass {
 
     public void removeItemsFromCart() {
         try {
-            if (webDriver.findElement(itemsInCart).isDisplayed()) {
-                System.out.println("'Reset App State' failed");
-            } else {
-                System.out.println("'Reset App State' passed");
+            assert !webDriver.findElement(itemsInCart).isDisplayed() : "'Reset App State' passed";          
+        } finally {
+            // The below code is for resetting the buttons so that they read 'Add to cart' instead of 'Remove'
+            List<WebElement> btnRemove = webDriver.findElements(btnRemoveItemFromCart);
+            if (btnRemove.size() > 0) {
+                for (WebElement webElement : btnRemove) {
+                    webElement.click();
+                }
             }
-        } catch (NoSuchElementException e) {
             System.out.println("'Reset App State' passed");
         }
     }
@@ -75,7 +81,7 @@ public class BurgerMenuOptionsPageObject extends BaseClass {
             System.out.println(saucelab + " failed to redirect to the 'About' page");
         }
     }
-    
+
     public void loginPage() {
         if (webDriver.getTitle().equalsIgnoreCase("Swag Labs")) {
             System.out.println("successfully logged out");
