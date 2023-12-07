@@ -11,10 +11,10 @@ Feature: Products filters
 
     Scenario Outline: filters
         Given user is on the Products page and clicks on the filter dropdown
-        When user select "<filter options>"
+        When user select "<filter option>"
         Then product is displayed according to the selected filter
         Examples:
-            | filter options      |
+            | filter option       |
             | Name (A to Z)       |
             | Name (Z to A)       |
             | Price (low to high) |
