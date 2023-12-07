@@ -9,11 +9,16 @@ Feature: Verify product information
         And click on the "Login" button
         Then user is redirected to the products page
 
+    # Scenario: Verify all products information
+    #     Given user is on the products page
+    #     When all products are displayed
+    #     Then each product name is displayed
+    #     And product image is displayed
+    #     And product description is displayed
+    #     And price is displayed
+    #     And Add to cart or Remove button is displayed
+
     Scenario: Verify all products information
         Given user is on the products page
-        When All products are displayed
-        Then each product name is displayed
-        And product image is displayed
-        And product description is displayed
-        And price is displayed
-        And Add to cart or Remove button is displayed
+        When all products are displayed
+        Then verify each product has a name, image, description, price and button
