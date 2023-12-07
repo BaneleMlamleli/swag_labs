@@ -3,7 +3,6 @@ package com.swag_labs.pageobjects;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import com.swag_labs.core.BaseClass;
@@ -26,15 +25,12 @@ public class ProductsPageObject extends BaseClass{
     }
 
     public void allProductsAreDisplayed() {
-        System.out.println("All products");
-        // verify all images are displayed
-        // 
         List<WebElement> prodDiv = webDriver.findElements(productDiv);
         assert prodDiv.size() == 6 : "Failed. Not all products are displayed";
     }
     
+    // NOTE: This method can be done a lot better so that it's more precise
     public void verifyProductDetails() {
-        System.out.println("Verify products");
         List<WebElement> prodDiv = webDriver.findElements(productDiv);
         List<WebElement> img = webDriver.findElements(image);
         List<WebElement> itemNm = webDriver.findElements(itemName);
@@ -42,11 +38,9 @@ public class ProductsPageObject extends BaseClass{
         List<WebElement> prc = webDriver.findElements(price);
         List<WebElement> btn = webDriver.findElements(button);
 
+        // NOTE: I think a better approach would be to check the images response code
         for (WebElement image : img) {
             assert image.getSize() != null : "Failed. Missing image in one of the products";
-            // if (image.getSize() == null) {
-            //     System.out.println("Failed. Missing image in one of the products");
-            // }
         }
 
         for (int i = 0; i < prodDiv.size(); i++) {
