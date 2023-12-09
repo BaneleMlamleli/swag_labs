@@ -9,8 +9,8 @@ Feature: Cart verification
         And click on the "Login" button
         Then user is redirected to the products page
 
-    Scenario: Check products
-        Given user is on the Cart page
-        When user checks if there are products in the Cart
-        Then product quantity much match with the number speficied on the shopping cart badge
-        And click on "Continue Shopping" to go back to the products page
+    Scenario: Checkout products
+        Given user adds Backpack and T-Shirt in the cart
+        When user click on the Cart
+        Then user verify items and quantity
+        And click on Continue Shopping to go back to the products page
