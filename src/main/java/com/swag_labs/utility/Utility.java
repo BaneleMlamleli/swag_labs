@@ -1,4 +1,4 @@
-package com.swag_labs.tools;
+package com.swag_labs.utility;
 
 public class Utility {
 
