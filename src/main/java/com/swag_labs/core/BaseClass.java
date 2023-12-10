@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * Class: BaseClass
@@ -47,7 +46,7 @@ public class BaseClass {
         }
     }
     
-    public void closeBrowser() {
+    public static void closeBrowser() {
         webDriver.close();
         webDriver.quit();
     }

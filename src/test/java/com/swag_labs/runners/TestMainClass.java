@@ -8,8 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src\\test\\java\\com\\swag_labs\\features",
-        // TODO: Add "com.saucedemo.utility"  in the glue for screenshot capturing
-        glue = { "com.swag_labs.stepdef"}, 
+        glue = { "com.swag_labs.stepdef", "com.swag_labs.utility"}, 
         monochrome = true, 
         plugin = { "pretty", "html:target/reports/html_report.html", "json:target/reports/json_report.json", "junit:target/reports/xml_report.xml" },
         tags = "@CheckoutOverview"

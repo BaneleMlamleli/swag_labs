@@ -18,7 +18,7 @@ public class CheckoutOverviewPageObject extends BaseClass {
     By itemNames = By.xpath("//div[@class='inventory_item_name']");
     By subTotal = By.xpath("//div[@class='summary_subtotal_label']");
     By total = By.xpath("//div[@class='summary_info_label summary_total_label']");
-    By tax = By.xpath("//div[@class='summary_tax_label']");
+    By tax = By.xpath("//div[@class='summary_tax_label1']");
 
     
     public void verifyInfo() {
