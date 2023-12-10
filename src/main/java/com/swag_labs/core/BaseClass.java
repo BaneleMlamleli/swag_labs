@@ -22,7 +22,7 @@ public class BaseClass {
     public static void launchBrowserWithWebsiteHomePage() {
         switch (BROWSER) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", DRIVER_PATH+"chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", DRIVER_PATH + "chromedriver.exe");
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(BASE_URL);
@@ -36,7 +36,7 @@ public class BaseClass {
                 webDriver.navigate().to(BASE_URL);
                 break;
             case "edge":
-                System.setProperty("webdriver.edge.driver", DRIVER_PATH+"msedgedriver.exe");
+                System.setProperty("webdriver.edge.driver", DRIVER_PATH + "msedgedriver.exe");
                 webDriver = new EdgeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(BASE_URL);
@@ -45,5 +45,10 @@ public class BaseClass {
                 System.out.println("Selected browser is not available. You can use Chrome, Firefox, or Edge");
                 break;
         }
+    }
+    
+    public void closeBrowser() {
+        webDriver.close();
+        webDriver.quit();
     }
 }
