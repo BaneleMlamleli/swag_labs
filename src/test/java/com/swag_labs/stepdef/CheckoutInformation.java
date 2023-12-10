@@ -1,5 +1,7 @@
 package com.swag_labs.stepdef;
 
+import org.testng.Assert;
+
 import com.swag_labs.pageobjects.CheckoutInformationPageObject;
 
 import io.cucumber.java.en.*;
@@ -24,7 +26,7 @@ public class CheckoutInformation {
     
     @Then("error message is displayed")
     public void error_message_is_displayed() {
-        checkoutInfo.errorMessage();
+        Assert.assertFalse(checkoutInfo.errorMessage(), "Fail. Error message failed to be displayed");
     }
 
     @Then("user is redirected to the checkout overview page")

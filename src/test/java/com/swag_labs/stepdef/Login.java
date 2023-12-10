@@ -1,5 +1,7 @@
 package com.swag_labs.stepdef;
 
+import org.testng.Assert;
+
 import com.swag_labs.core.BaseClass;
 import io.cucumber.java.en.*;
 import com.swag_labs.pageobjects.LoginPageObject;
@@ -24,7 +26,7 @@ public class Login{
 
     @Then("user is redirected to the products page")
     public void user_is_redirected_to_the_products_page() {
-        login.confirmRedirectToProductsPage();
+        Assert.assertTrue(login.confirmRedirectToProductsPage(), "Current page is not a Products page");
     }
 
     @Then("^error message \"([^\"]*)\" is displayed$")

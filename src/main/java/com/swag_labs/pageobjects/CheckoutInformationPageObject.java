@@ -1,6 +1,7 @@
 package com.swag_labs.pageobjects;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import com.swag_labs.core.BaseClass;
 
@@ -27,14 +28,11 @@ public class CheckoutInformationPageObject extends BaseClass {
         webDriver.findElement(btnContinue).click();
     }
 
-    public void errorMessage() {
-        if (!webDriver.findElement(errorMessage).isDisplayed()) {
-            System.out.println("Fail. Error message failed to be displayed");
-        }
-    }
+    public boolean errorMessage() {
+        return !webDriver.findElement(errorMessage).isDisplayed();
+    } 
 
     public void redirectedToCheckoutOverviewPage() {
-        assert webDriver.getCurrentUrl().equalsIgnoreCase("https://www.saucedemo.com/checkout-step-two.html")
-                : "Fail. Page did not redirect successfully";
+        Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.saucedemo.com/checkout-step-two.html");
     }
 }

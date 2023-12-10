@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.swag_labs.core.BaseClass;
 
@@ -32,13 +33,10 @@ public class CartPageObject extends BaseClass {
         for (int i = 0; i < listOfItemsInTheCart.size(); i++) {
             System.out.println("Items in the list: " + listOfItemsInTheCart.get(i).getText());
         }
-        
-        assert listOfItemsInTheCart.size() == 2 : "Failed. Expected 2 items in the cart";
 
-        assert listOfItemsInTheCart.get(0).getText().equalsIgnoreCase("Sauce Labs Backpack") : "Failed. Backpack is not selected";
-        
-        assert listOfItemsInTheCart.get(1).getText().equalsIgnoreCase("Sauce Labs Bike Light"): "Failed. T-Shirt is not selected";
-
+        Assert.assertEquals(listOfItemsInTheCart.size(), 2);
+        Assert.assertEquals(listOfItemsInTheCart.get(0).getText(), "Sauce Labs Backpack");
+        Assert.assertEquals(listOfItemsInTheCart.get(1).getText(), "Sauce Labs Bike Light");
     }
     
     public void productsPage() {

@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
         glue = { "com.swag_labs.stepdef", "com.swag_labs.utility"}, 
         monochrome = true, 
         plugin = { "pretty", "html:target/reports/html_report.html", "json:target/reports/json_report.json", "junit:target/reports/xml_report.xml" },
-        tags = "@CheckoutOverview"
+        tags = "@Login"
 )
 public class TestMainClass{
     
