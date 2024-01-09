@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.swag_labs.core.BaseClass;
 
@@ -35,11 +36,12 @@ public class CheckoutOverviewPageObject extends BaseClass {
         double dblFinalTotal = Double.parseDouble(strTotal[1].substring(1));
         
         Double dblTotal = dblSubtotal + dblTax;
-        
-        assert dblTotal == dblFinalTotal : "Failed. Sum of item prices does not match";
 
-        assert itemNm.get(0).getText().equalsIgnoreCase("Sauce Labs Backpack"): "Failed. First item is not 'Sauce Labs Backpack'";
-        assert itemNm.get(1).getText().equalsIgnoreCase("Sauce Labs Bike Light"): "Failed. Second item is not 'Sauce Labs Bike Light'";
+        Assert.assertTrue(dblTotal == dblFinalTotal, "Failed. Sum of item prices does not match");
+
+        Assert.assertEquals(itemNm.get(0).getText(), "Sauce Labs Backpack", "Failed. First item is not 'Sauce Labs Backpack'"); 
+        
+        Assert.assertEquals(itemNm.get(1).getText(), "Sauce Labs Bike Light", "Failed. Second item is not 'Sauce Labs Bike Light'");
     }
     
     public void clickButton(String btn) {
@@ -50,10 +52,9 @@ public class CheckoutOverviewPageObject extends BaseClass {
     }
     
     public void messageDisplayed(String msg) {
-        System.out.println("INSIDE THE MESSAGE METHOD");
-        assert webDriver.findElement(completeHeader).isDisplayed(): "Failed. Transaction did not complete successfully";        
+        Assert.assertTrue(webDriver.findElement(completeHeader).isDisplayed(), "Failed. Transaction did not complete successfully");
         
-        assert webDriver.findElement(completeText).getText().equalsIgnoreCase(msg): "Failed. Transaction did not complete successfully";        
+        Assert.assertEquals(webDriver.findElement(completeText).getText(), msg, "Failed. Transaction did not complete successfully");        
     }
     
 }

@@ -19,7 +19,6 @@ public class Hooks extends BaseClass {
 
     @After
     public void afterMethodScenario(Scenario sc) {
-        System.out.println("This will run after the scenarios");
         if (sc.isFailed()) {
             TakesScreenshot takesScreenshot = (TakesScreenshot) webDriver;
             byte[] screenshot = takesScreenshot.getScreenshotAs(OutputType.BYTES);

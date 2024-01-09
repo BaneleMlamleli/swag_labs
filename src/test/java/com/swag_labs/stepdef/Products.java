@@ -1,5 +1,7 @@
 package com.swag_labs.stepdef;
 
+import org.testng.Assert;
+
 import com.swag_labs.pageobjects.ProductsPageObject;
 
 import io.cucumber.java.en.*;
@@ -10,12 +12,12 @@ public class Products {
 
     @Given("user is on the products page")
     public void user_is_on_the_products_page(){
-        productsPageObject.productsPage();
+        Assert.assertTrue(productsPageObject.productsPage(), "Failed. Product page not successfully verified");
     }
 
     @When("all products are displayed")
     public void all_products_are_displayed(){
-        productsPageObject.allProductsAreDisplayed();
+        Assert.assertTrue(productsPageObject.allProductsAreDisplayed(), "Failed. Not all products are displayed");
     }
 
     @Then("verify each product has a name, image, description, price and button")

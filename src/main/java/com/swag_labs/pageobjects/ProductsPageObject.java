@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.swag_labs.core.BaseClass;
 
@@ -18,15 +19,14 @@ public class ProductsPageObject extends BaseClass{
     By button = By.xpath("//button[normalize-space(@class)='btn btn_primary btn_small btn_inventory']");
     
 
-    public void productsPage() {
+    public boolean productsPage() {
         // check url, productTitle
-        assert webDriver.getCurrentUrl().equalsIgnoreCase("https://www.saucedemo.com/inventory.html") && webDriver.findElement(productTitle).isDisplayed() : "Failed. Product page not successfully verified";
-        
+        return webDriver.getCurrentUrl().equalsIgnoreCase("https://www.saucedemo.com/inventory.html") && webDriver.findElement(productTitle).isDisplayed();        
     }
 
-    public void allProductsAreDisplayed() {
+    public boolean allProductsAreDisplayed() {
         List<WebElement> prodDiv = webDriver.findElements(productDiv);
-        assert prodDiv.size() == 6 : "Failed. Not all products are displayed";
+        return prodDiv.size() == 6;
     }
     
     // NOTE: This method can be done a lot better so that it's more precise
@@ -40,14 +40,15 @@ public class ProductsPageObject extends BaseClass{
 
         // NOTE: I think a better approach would be to check the images response code
         for (WebElement image : img) {
-            assert image.getSize() != null : "Failed. Missing image in one of the products";
+           Assert.assertTrue(image.getSize() != null, "Failed. Missing image in one of the products");
+
         }
 
         for (int i = 0; i < prodDiv.size(); i++) {
-            assert itemNm.get(i).getText() != null : "Failed. Missing item name in one of the products";
-            assert desc.get(i).getText() != null : "Failed. Missing description in one of the products";
-            assert prc.get(i).getText() != null : "Failed. Missing price in one of the products";
-            assert btn.get(i).getText() != null : "Failed. Check one of the product's buttons";
+             Assert.assertTrue(itemNm.get(i).getText() != null, "Failed. Missing item name in one of the products");
+             Assert.assertTrue(desc.get(i).getText() != null, "Failed. Missing description in one of the products");
+             Assert.assertTrue(prc.get(i).getText() != null, "Failed. Missing price in one of the products");
+             Assert.assertTrue(btn.get(i).getText() != null, "Failed. Check one of the product's buttons");
         }
     }
 }

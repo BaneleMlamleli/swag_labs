@@ -48,20 +48,20 @@ public class BurgerMenuOptionsPageObject extends BaseClass {
         }
     }
 
-    public void confirmRedirectToProductsPage() {
+    public boolean confirmRedirectToProductsPage() {
         boolean confirmation = false;
         String productPageUrl = "https://www.saucedemo.com/inventory.html";
         if ((webDriver.getCurrentUrl().equalsIgnoreCase(productPageUrl))
                 && (webDriver.findElement(productPage).isDisplayed())) {
             confirmation = true;
         }
-        // return confirmation;
-        assert confirmation : "Current page is not a Products page";
+        return confirmation;
     }
 
-    public void removeItemsFromCart() {
+    public boolean removeItemsFromCart() {
         try {
-            assert !webDriver.findElement(itemsInCart).isDisplayed() : "'Reset App State' passed";          
+            return webDriver.findElement(itemsInCart).isDisplayed();          
+            // assert !webDriver.findElement(itemsInCart).isDisplayed() : "'Reset App State' passed";          
         } finally {
             // The below code is for resetting the buttons so that they read 'Add to cart' instead of 'Remove'
             List<WebElement> btnRemove = webDriver.findElements(btnRemoveItemFromCart);

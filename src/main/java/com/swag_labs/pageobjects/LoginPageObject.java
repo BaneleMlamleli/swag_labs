@@ -1,6 +1,8 @@
 package com.swag_labs.pageobjects;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
+
 import com.swag_labs.core.BaseClass;
 public class LoginPageObject extends BaseClass{
 
@@ -19,7 +21,7 @@ public class LoginPageObject extends BaseClass{
         webDriver.findElement(btnLogin).click();
     }
     
-    public void confirmRedirectToProductsPage() {
+    public boolean confirmRedirectToProductsPage() {
         boolean confirmation = false;
         String productPageUrl = "https://www.saucedemo.com/inventory.html";
         System.out.println("URL: " + webDriver.getCurrentUrl());
@@ -27,13 +29,12 @@ public class LoginPageObject extends BaseClass{
                 && (webDriver.findElement(productPage).isDisplayed())) {
             confirmation = true;
         }
-        // return confirmation;
-        assert confirmation : "Current page is not a Products page";
+        return confirmation;
     }
 
     public void errorMessage(String errMessage){
         if (webDriver.findElement(errMsg).isDisplayed()) {
-            assert webDriver.findElement(errMsg).getText() == "Username and password do not match any user in this service";
+            Assert.assertEquals(webDriver.findElement(errMsg).getText(), "Username and password do not match any user in this service");
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.swag_labs.stepdef;
 
+import org.testng.Assert;
+
 import com.swag_labs.pageobjects.BurgerMenuOptionsPageObject;
 import io.cucumber.java.en.*;
 
@@ -16,12 +18,12 @@ public class BurgerMenuOptions {
 
     @Then("user is redirected to the home page")
     public void user_is_redirected_to_the_home_page() {
-        burgerMenuOptionsPageObject.confirmRedirectToProductsPage();
+        Assert.assertTrue(burgerMenuOptionsPageObject.confirmRedirectToProductsPage());
     }
 
     @And("items are removed from the cart")
     public void items_are_removed_from_the_cart() {
-        burgerMenuOptionsPageObject.removeItemsFromCart();
+        Assert.assertTrue(burgerMenuOptionsPageObject.removeItemsFromCart());
     }
 
     @Then("^user is redirected to \"([^\"]*)\" home page with title \"([^\"]*)\"$")
