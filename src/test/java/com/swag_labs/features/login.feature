@@ -1,4 +1,4 @@
-@login
+@Login
 Feature: login screen
 
     Login screen that will test all the login credentials with passing and failing scenarios
