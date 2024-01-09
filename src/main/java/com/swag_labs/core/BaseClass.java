@@ -14,7 +14,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class BaseClass {
 
     public static WebDriver webDriver = null;
-    static final String DRIVER_PATH = "C:/Users/ciphe/Documents/Programming_local/webdrivers/";
+    static final String DRIVER_PATH = "C:/Users/cipher/Documents/Programming_local/webdrivers/";
     static final String BASE_URL = "https://www.saucedemo.com/";
     final static String BROWSER = "chrome"; //chrome, firefox, edge
     
