@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 /**
  * Class: BaseClass
@@ -12,12 +11,11 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * launch the default website page
  */
 public class BaseClass {
-
     public static WebDriver webDriver = null;
     // static final String DRIVER_PATH = "C:/Users/cipher/Documents/Programming_local/webdrivers/";
     static final String BASE_URL = "https://www.saucedemo.com/";
     final static String BROWSER = "chrome"; //chrome, firefox, edge
-    
+
     public static void launchBrowserWithWebsiteHomePage() {
         switch (BROWSER) {
             case "chrome":
