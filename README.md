@@ -10,7 +10,6 @@ Technologies that will be implemented:
 - Cucumber BDD
 - Page object model
 - Git
-- Log4J
 - Jenkins
 - Jira reporting
 - Test screen capture

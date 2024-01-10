@@ -1,7 +1,6 @@
 package com.swag_labs.pageobjects;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -15,14 +14,13 @@ public class CartPageObject extends BaseClass {
     By cart = By.xpath("//a[@class='shopping_cart_link']");
     By contiShopping = By.xpath("//button[@id='continue-shopping']");
 
-    By itemsInTheCart = By.xpath("//div[@class='inventory_item_name']");
-    
+    By itemsInTheCart = By.xpath("//div[@class='inventory_item_name']");    
 
     public void addToCart() {
         webDriver.findElement(backpackItem).click();
         webDriver.findElement(tShirtItem).click();
     }
-
+    
     public void clickCart() {
         webDriver.findElement(cart).click();
     }
