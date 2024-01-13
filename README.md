@@ -12,4 +12,4 @@ Technologies that will be implemented:
 - Git
 - Jenkins (Running on AWS an EC2 Instance)
 - Jira reporting.
-- Test screen capture
+- Test screen capture.
