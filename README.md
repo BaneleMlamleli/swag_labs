@@ -10,6 +10,6 @@ Technologies that will be implemented:
 - Cucumber BDD
 - Page object model
 - Git
-- Jenkins
+- Jenkins (Running on AWS EC2 Instance)
 - Jira reporting
 - Test screen capture
