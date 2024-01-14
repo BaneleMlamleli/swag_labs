@@ -2,14 +2,10 @@ package com.swag_labs.pageobjects;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.NoSuchElementException;
-
-import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import com.swag_labs.core.BaseClass;
 
