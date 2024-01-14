@@ -1,14 +1,9 @@
 package com.swag_labs.utility;
 
-import java.io.File;
-import java.io.IOException;
-
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import com.swag_labs.core.BaseClass;
-
 import io.cucumber.java.*;
 // import javax.imageio.ImageIO;
 // import ru.yandex.qatools.ashot.AShot;
