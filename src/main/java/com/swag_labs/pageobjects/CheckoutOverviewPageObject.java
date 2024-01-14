@@ -38,10 +38,9 @@ public class CheckoutOverviewPageObject extends BaseClass {
         Double dblTotal = dblSubtotal + dblTax;
 
         Assert.assertTrue(dblTotal == dblFinalTotal, "Failed. Sum of item prices does not match");
-
-        Assert.assertEquals(itemNm.get(0).getText(), "Sauce Labs Backpack", "Failed. First item is not 'Sauce Labs Backpack'"); 
-        
+        Assert.assertEquals(itemNm.get(0).getText(), "Sauce Labs Backpack", "Failed. First item is not 'Sauce Labs Backpack'");         
         Assert.assertEquals(itemNm.get(1).getText(), "Sauce Labs Bike Light", "Failed. Second item is not 'Sauce Labs Bike Light'");
+        System.out.println("Price: " + prc.get(0));
     }
     
     public void clickButton(String btn) {
