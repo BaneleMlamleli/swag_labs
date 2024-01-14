@@ -11,5 +11,5 @@ Technologies that will be implemented:
 - Page object model
 - Git
 - Jenkins (Running on AWS an EC2 Instance)
-- Jira reporting
-- Test screen capture
+- Jira reporting.
+- Test screen capture.
